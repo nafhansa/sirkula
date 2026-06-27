@@ -1,26 +1,334 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* ============================================================
+   SIRKULA DESIGN TOKENS
+   ============================================================ */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Primary Colors (Sirkula Brand) ── */
+  --color-primary-dark: #1b5e3f;
+  --color-primary: #2d8659;
+  --color-primary-light: #4caf7d;
+  --color-primary-lighter: #e8f5e9;
+
+  /* ── Semantic Colors ── */
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-danger: #f44336;
+  --color-info: #2196f3;
+
+  /* ── Neutral Scale ── */
+  --color-neutral-100: #fafafa;
+  --color-neutral-200: #f5f5f5;
+  --color-neutral-300: #e0e0e0;
+  --color-neutral-500: #9e9e9e;
+  --color-neutral-700: #424242;
+  --color-neutral-900: #212121;
+
+  /* ── Waste Category Colors ── */
+  --color-plastic: #2196f3;
+  --color-paper: #ff9800;
+  --color-residue: #795548;
+
+  /* ── Typography: Font Families ── */
+  --font-family-sans: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+
+  /* ── Typography: Font Sizes (Mobile/Student) ── */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 32px;
+
+  /* ── Typography: Font Sizes (Admin/Desktop) ── */
+  --font-size-admin-xs: 11px;
+  --font-size-admin-sm: 12px;
+  --font-size-admin-base: 13px;
+  --font-size-admin-lg: 14px;
+  --font-size-admin-xl: 16px;
+
+  /* ── Typography: Font Weights ── */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ── Spacing (8px base unit) ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* ── Border Radius ── */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+
+  /* ── Borders ── */
+  --border-light: 1px solid var(--color-neutral-200);
+  --border-default: 1px solid var(--color-neutral-300);
+
+  /* ── Shadows (Student App — subtle, flat) ── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.16);
+
+  /* ── Shadows (Admin Dashboard — more defined) ── */
+  --shadow-admin-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-admin-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-admin-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* ── Layout ── */
+  --header-height: 64px;
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 64px;
+  --bottom-tab-height: 60px;
 }
+
+/* ============================================================
+   TAILWIND THEME EXTENSION
+   ============================================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-lighter: var(--color-primary-lighter);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+  --color-info: var(--color-info);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-900: var(--color-neutral-900);
+  --color-plastic: var(--color-plastic);
+  --color-paper: var(--color-paper);
+  --color-residue: var(--color-residue);
+
+  /* Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-admin-sm: var(--shadow-admin-sm);
+  --shadow-admin-md: var(--shadow-admin-md);
+  --shadow-admin-lg: var(--shadow-admin-lg);
+
+  /* Border Radius */
+  --radius-sm: var(--border-radius-sm);
+  --radius-md: var(--border-radius-md);
+  --radius-lg: var(--border-radius-lg);
+  --radius-xl: var(--border-radius-xl);
+  --radius-full: var(--border-radius-full);
+
+  /* Spacing */
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+
+  /* Font */
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-700);
+  background-color: var(--color-neutral-100);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   TYPOGRAPHY SCALE (Student Mobile)
+   ============================================================ */
+
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-700);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-700);
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-700);
+  line-height: 1.5;
+}
+
+p {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-700);
+  line-height: 1.6;
+}
+
+.caption {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-500);
+}
+
+/* ============================================================
+   ANIMATIONS & MICRO-INTERACTIONS
+   ============================================================ */
+
+@keyframes buttonPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-4px);
+  }
+  40%,
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   MOBILE SAFE AREAS
+   ============================================================ */
+
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+  padding-bottom: max(env(safe-area-inset-bottom), var(--space-lg));
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+
+@media (min-width: 480px) {
+  :root {
+    --space-lg: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 18px;
+    --font-size-lg: 20px;
+  }
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+.min-touch {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
