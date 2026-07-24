@@ -149,70 +149,76 @@
    BASE STYLES
    ============================================================ */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* Wrapped in @layer base so Tailwind utility classes (layer: utilities)
+   always win over these defaults in the cascade, regardless of
+   selector specificity — unlayered rules would otherwise beat
+   layered utilities like `text-white` on <p>/<h1-4> elements. */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-html {
-  -webkit-text-size-adjust: 100%;
-  font-size: 16px;
-}
+  html {
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+  }
 
-body {
-  margin: 0;
-  font-family: var(--font-family-sans);
-  font-size: var(--font-size-base);
-  color: var(--color-neutral-700);
-  background-color: var(--color-neutral-100);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  body {
+    margin: 0;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    color: var(--color-neutral-700);
+    background-color: var(--color-neutral-100);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-/* ============================================================
-   TYPOGRAPHY SCALE (Student Mobile)
-   ============================================================ */
+  /* ============================================================
+     TYPOGRAPHY SCALE (Student Mobile)
+     ============================================================ */
 
-h1 {
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-neutral-900);
-  line-height: 1.2;
-}
+  h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-neutral-900);
+    line-height: 1.2;
+  }
 
-h2 {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-neutral-700);
-  line-height: 1.3;
-}
+  h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-700);
+    line-height: 1.3;
+  }
 
-h3 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-neutral-700);
-  line-height: 1.4;
-}
+  h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-700);
+    line-height: 1.4;
+  }
 
-h4 {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-neutral-700);
-  line-height: 1.5;
-}
+  h4 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-700);
+    line-height: 1.5;
+  }
 
-p {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-regular);
-  color: var(--color-neutral-700);
-  line-height: 1.6;
-}
+  p {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-neutral-700);
+    line-height: 1.6;
+  }
 
-.caption {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-regular);
-  color: var(--color-neutral-500);
+  .caption {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-neutral-500);
+  }
 }
 
 /* ============================================================
@@ -283,6 +289,32 @@ p {
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slidePageIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-transition {
+  /* Opacity-only: a transform here causes ResizeObserver-driven components
+     (e.g. Recharts ResponsiveContainer) to re-measure mid-animation and flicker. */
+  animation: slidePageIn 120ms ease-in-out;
 }
 
 /* ============================================================

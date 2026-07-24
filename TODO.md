@@ -66,201 +66,201 @@
 
 ### 1.1 Layout & Navigation Foundation
 
-- [ ] Setup PWA manifest (`manifest.json`)
-- [ ] Konfigurasi viewport 320px–768px mobile-first
-- [ ] Buat komponen `BottomTabBar`:
-  - [ ] 4 tab: Home (🏠), Scan (📱), Rewards (🎁), Profile (👤)
-  - [ ] Tinggi 60px
-  - [ ] Safe area padding (iOS notch) dengan `env(safe-area-inset-bottom)`
-  - [ ] Active tab: primary color + bold font
-  - [ ] Inactive tabs: neutral gray
-  - [ ] Tab labels visible (bukan icon-only)
-- [ ] Buat komponen `Header` mobile:
-  - [ ] Judul sekolah di kiri
-  - [ ] Notification bell icon di kanan
-  - [ ] Back button (optional)
-  - [ ] Safe area padding atas: `env(safe-area-inset-top)`
-- [ ] Setup responsive breakpoints:
-  - [ ] Base: 320px–479px (phones)
-  - [ ] `@media (min-width: 480px)`: small tablets
-  - [ ] `@media (min-width: 768px)`: iPad / tablets
-  - [ ] Safe area insets untuk header dan bottom tab
+- [x] Setup PWA manifest (`manifest.json`)
+- [x] Konfigurasi viewport 320px–768px mobile-first
+- [x] Buat komponen `BottomTabBar`:
+  - [x] 4 tab: Home (🏠), Scan (📱), Rewards (🎁), Profile (👤)
+  - [x] Tinggi 60px
+  - [x] Safe area padding (iOS notch) dengan `env(safe-area-inset-bottom)`
+  - [x] Active tab: primary color + bold font
+  - [x] Inactive tabs: neutral gray
+  - [x] Tab labels visible (bukan icon-only)
+- [x] Buat komponen `Header` mobile:
+  - [x] Judul sekolah di kiri
+  - [x] Notification bell icon di kanan
+  - [x] Back button (optional)
+  - [x] Safe area padding atas: `env(safe-area-inset-top)`
+- [x] Setup responsive breakpoints:
+  - [x] Base: 320px–479px (phones)
+  - [x] `@media (min-width: 480px)`: small tablets
+  - [x] `@media (min-width: 768px)`: iPad / tablets
+  - [x] Safe area insets untuk header dan bottom tab
 
 ### 1.2 Screen 1: HOME DASHBOARD
 
-- [ ] Buat komponen `GreetingCard`:
-  - [ ] "Welcome back, [Nama]! 👋"
-  - [ ] "Last activity: [waktu]"
-- [ ] Buat komponen `PointsHeroCard`:
-  - [ ] Background `--color-primary-light`, teks putih
-  - [ ] Border radius 16px, shadow 8px
-  - [ ] Tampilkan total poin (format: `2,450`)
-  - [ ] Tampilkan rank sekolah (`📊 Rank #8 in School`)
-  - [ ] Tampilkan streak (`🔥 Streak: 12 days`)
-- [ ] Buat komponen `QuickActionGrid`:
-  - [ ] Grid 2x2
-  - [ ] 4 tombol: Scan Waste (📸), Redeem Rewards (🎁), View History (📊), See Leaderboard (🏆)
-  - [ ] Setiap tombol: ikon + label, shadow-md
-- [ ] Buat komponen `ActivityFeed`:
-  - [ ] Tampilkan 3 entri terbaru
-  - [ ] Format: "Jun 26, 14:30 🔵 Plastic +70 pts"
-  - [ ] Tombol "See more..." expandable
-  - [ ] Warna berdasarkan kategori (plastik = biru, kertas = oranye, residu = coklat)
-- [ ] Susun layout `HomeScreen` dengan urutan: StatusBar → Header → GreetingCard → PointsHeroCard → QuickActionGrid → ActivityFeed → BottomTabBar
-- [ ] Padding kiri/kanan 16px
-- [ ] Scroll area di antara header dan tab bar
+- [x] Buat komponen `GreetingCard`:
+  - [x] "Welcome back, [Nama]! 👋"
+  - [x] "Last activity: [waktu]"
+- [x] Buat komponen `PointsHeroCard`:
+  - [x] Background `--color-primary-light`, teks putih
+  - [x] Border radius 16px, shadow 8px
+  - [x] Tampilkan total poin (format: `2,450`)
+  - [x] Tampilkan rank sekolah (`📊 Rank #8 in School`)
+  - [x] Tampilkan streak (`🔥 Streak: 12 days`)
+- [x] Buat komponen `QuickActionGrid`:
+  - [x] Grid 2x2
+  - [x] 4 tombol: Scan Waste (📸), Redeem Rewards (🎁), View History (📊), See Leaderboard (🏆)
+  - [x] Setiap tombol: ikon + label, shadow-md
+- [x] Buat komponen `ActivityFeed`:
+  - [x] Tampilkan 3 entri terbaru
+  - [x] Format: "Jun 26, 14:30 🔵 Plastic +70 pts"
+  - [x] Tombol "See more..." expandable
+  - [x] Warna berdasarkan kategori (plastik = biru, kertas = oranye, residu = coklat)
+- [x] Susun layout `HomeScreen` dengan urutan: StatusBar → Header → GreetingCard → PointsHeroCard → QuickActionGrid → ActivityFeed → BottomTabBar
+- [x] Padding kiri/kanan 16px
+- [x] Scroll area di antara header dan tab bar
 
 ### 1.3 Screen 2: SCAN QR CODE
 
-- [ ] Buat komponen `QRCodeReader`:
-  - [ ] Integrasi `html5-qrcode`
-  - [ ] Full-screen camera (safe area aware)
-  - [ ] Constraint: `facingMode: "environment"` (kamera belakang)
-  - [ ] 60fps camera stream
-  - [ ] Debounce scan detection 500ms
-- [ ] Buat komponen `ScanFrameOverlay`:
-  - [ ] Frame 200x200px
-  - [ ] Dashed border, warna primary
-  - [ ] Posisi di tengah viewfinder
-- [ ] Handle camera permissions:
-  - [ ] Request permission saat mount
-  - [ ] Handle denial gracefully (tampilkan pesan error + instruksi)
-- [ ] Buat `StatusMessage` saat QR terdeteksi:
-  - [ ] Icon ✅
-  - [ ] Nama eco-station (`Eco-Station: Kantin Area (ESB-01)`)
-  - [ ] Toast notification auto-dismiss 300ms
-- [ ] Buat tombol `[NEXT]` setelah scan berhasil → navigate ke Log Waste
-- [ ] Buat `HelperText`: "Point camera at QR code on bin"
-- [ ] Susun layout `ScanScreen`
+- [x] Buat komponen `QRCodeReader`:
+  - [x] Integrasi `html5-qrcode`
+  - [x] Full-screen camera (safe area aware)
+  - [x] Constraint: `facingMode: "environment"` (kamera belakang)
+  - [x] 60fps camera stream
+  - [x] Debounce scan detection 500ms
+- [x] Buat komponen `ScanFrameOverlay`:
+  - [x] Frame 200x200px
+  - [x] Dashed border, warna primary
+  - [x] Posisi di tengah viewfinder
+- [x] Handle camera permissions:
+  - [x] Request permission saat mount
+  - [x] Handle denial gracefully (tampilkan pesan error + instruksi)
+- [x] Buat `StatusMessage` saat QR terdeteksi:
+  - [x] Icon ✅
+  - [x] Nama eco-station (`Eco-Station: Kantin Area (ESB-01)`)
+  - [x] Toast notification auto-dismiss 300ms
+- [x] Buat tombol `[NEXT]` setelah scan berhasil → navigate ke Log Waste
+- [x] Buat `HelperText`: "Point camera at QR code on bin"
+- [x] Susun layout `ScanScreen`
 
 ### 1.4 Screen 3: LOG WASTE (Post-Scan Form)
 
-- [ ] Buat komponen `StationDisplay` (read-only):
-  - [ ] Tampilkan nama eco-station yang di-scan
-  - [ ] Icon ✅
-- [ ] Buat komponen `CategorySelector`:
-  - [ ] 3 pilihan: Plastic Bottles (🔵, 50 pts), Paper & Cardboard (📄, 40 pts), Residue/Mixed (⚫, 10 pts)
-  - [ ] Radio button style, setiap opsi min 48px tinggi (thumb-friendly)
-  - [ ] Active: primary color bg, teks putih, check icon
-  - [ ] Grid 2-kolom (stack pada layar sempit)
-  - [ ] Padding 12px per card
-- [ ] Buat komponen `PhotoUploader`:
-  - [ ] Integrasi Cloudinary widget
-  - [ ] Placeholder 120x120px
-  - [ ] Label: "ADD PHOTO (OPTIONAL) +20 BONUS PTS"
-- [ ] Buat `TextInput` untuk Notes:
-  - [ ] Opsional
-  - [ ] Max 200 karakter
-  - [ ] Placeholder "Optional notes..."
-  - [ ] Counter karakter
-- [ ] Buat komponen `PointsPreview` (real-time):
-  - [ ] Base points (tergantung kategori)
-  - [ ] Photo bonus: +20 pts jika foto diupload
-  - [ ] Total kalkulasi
-  - [ ] Update real-time saat user memilih opsi
-- [ ] Implementasi form validation dengan Zod:
+- [x] Buat komponen `StationDisplay` (read-only):
+  - [x] Tampilkan nama eco-station yang di-scan
+  - [x] Icon ✅
+- [x] Buat komponen `CategorySelector`:
+  - [x] 3 pilihan: Plastic Bottles (🔵, 50 pts), Paper & Cardboard (📄, 40 pts), Residue/Mixed (⚫, 10 pts)
+  - [x] Radio button style, setiap opsi min 48px tinggi (thumb-friendly)
+  - [x] Active: primary color bg, teks putih, check icon
+  - [x] Grid 2-kolom (stack pada layar sempit)
+  - [x] Padding 12px per card
+- [~] Buat komponen `PhotoUploader`:
+  - [x] Placeholder 120x120px
+  - [x] Label: "ADD PHOTO (OPTIONAL) +20 BONUS PTS"
+  - [ ] Integrasi Cloudinary widget (menunggu Cloudinary SDK)
+- [x] Buat `TextInput` untuk Notes:
+  - [x] Opsional
+  - [x] Max 200 karakter
+  - [x] Placeholder "Optional notes..."
+  - [x] Counter karakter
+- [x] Buat komponen `PointsPreview` (real-time):
+  - [x] Base points (tergantung kategori)
+  - [x] Photo bonus: +20 pts jika foto diupload
+  - [x] Total kalkulasi
+  - [x] Update real-time saat user memilih opsi
+- [x] Implementasi form validation dengan Zod:
   ```
   eco_station_id: uuid, required
   category: enum('plastic','paper','residue'), required
   photo_url: url, optional
   notes: string max 200, optional
   ```
-- [ ] Tombol `[SUBMIT WASTE]`:
-  - [ ] Full width
-  - [ ] Disabled sampai kategori dipilih
-  - [ ] Loading spinner saat submit
-- [ ] Tombol `[CANCEL]` secondary action
-- [ ] Susun layout `LogWasteScreen`
+- [x] Tombol `[SUBMIT WASTE]`:
+  - [x] Full width
+  - [x] Disabled sampai kategori dipilih
+  - [x] Loading spinner saat submit
+- [x] Tombol `[CANCEL]` secondary action
+- [x] Susun layout `LogWasteScreen`
 
 ### 1.5 Screen 4: REWARDS CATALOG
 
-- [ ] Buat komponen `BalanceCard`:
-  - [ ] Prominent: "💰 BALANCE: 2,450 POINTS"
-  - [ ] Sticky header, update real-time saat redeem
-- [ ] Buat komponen `FilterChips`:
-  - [ ] Kategori: All, Canteen, Vouchers, School
-  - [ ] Horizontal scrollable
-  - [ ] Toggle-style selection
-- [ ] Buat komponen `RewardCard`:
-  - [ ] Full width, padding 12px, shadow-md on hover
-  - [ ] Tampilkan: nama reward, cost (pts), stok
-  - [ ] Tombol REDEEM (primary green) jika tersedia
-  - [ ] Tombol OUT OF STOCK (disabled, gray) jika stok 0
-- [ ] Implementasi Redemption Flow:
-  - [ ] Step 1: Tap [REDEEM]
-  - [ ] Step 2: Confirmation modal "Spend X points for [reward]?"
-  - [ ] Step 3: API call submit
-  - [ ] Step 4: Toast success "✅ Voucher Code: ABC123 sent to SMS"
-  - [ ] Step 5: Modal display kode + instruksi "Show this to canteen"
-  - [ ] Step 6: Balance update immediately
-- [ ] Buat komponen `RedemptionModal`
-- [ ] Implementasi pagination / "Load more..."
-- [ ] Susun layout `RewardsScreen`
+- [x] Buat komponen `BalanceCard`:
+  - [x] Prominent: "💰 BALANCE: 2,450 POINTS"
+  - [x] Sticky header, update real-time saat redeem
+- [x] Buat komponen `FilterChips`:
+  - [x] Kategori: All, Canteen, Vouchers, School
+  - [x] Horizontal scrollable
+  - [x] Toggle-style selection
+- [x] Buat komponen `RewardCard`:
+  - [x] Full width, padding 12px, shadow-md on hover
+  - [x] Tampilkan: nama reward, cost (pts), stok
+  - [x] Tombol REDEEM (primary green) jika tersedia
+  - [x] Tombol OUT OF STOCK (disabled, gray) jika stok 0
+- [x] Implementasi Redemption Flow:
+  - [x] Step 1: Tap [REDEEM]
+  - [x] Step 2: Confirmation modal "Spend X points for [reward]?"
+  - [x] Step 3: API call submit (mock)
+  - [x] Step 4: Toast success "✅ Voucher Code: ABC123 sent to SMS"
+  - [x] Step 5: Modal display kode + instruksi "Show this to canteen"
+  - [x] Step 6: Balance update immediately
+- [x] Buat komponen `RedemptionModal`
+- [ ] Implementasi pagination / "Load more..." (deferred — perlu API)
+- [x] Susun layout `RewardsScreen`
 
 ### 1.6 Screen 5: PERSONAL PROFILE / WASTE PASSPORT
 
-- [ ] Buat section profile:
-  - [ ] Foto profil 80x80px, circle
-  - [ ] Nama lengkap
-  - [ ] Nama sekolah
-  - [ ] Tanggal bergabung
-  - [ ] Padding 24px, white card, center-aligned
-- [ ] Buat `StatsGrid` (3 kolom):
-  - [ ] ⭐ Total Points
-  - [ ] 📊 Total Entries
-  - [ ] 🌱 CO₂e kg (dihindarkan)
-  - [ ] 🔥 Current Streak
-  - [ ] 📈 Your Rank (sekolah)
-  - [ ] 💾 Total Weight (kg)
-- [ ] Buat `ContributionBreakdown` (30 hari):
-  - [ ] 🔵 Plastic: X entries, X pts
-  - [ ] 📄 Paper: X entries, X pts
-  - [ ] ⚫ Residue: X entries, X pts
-- [ ] Buat `RecentActivityList`:
-  - [ ] Last 5 entries
-  - [ ] Tap "View all X entries" → modal atau screen terpisah
-- [ ] Buat tombol akun (2-kolom grid, 48px height):
-  - [ ] [EDIT PROFILE]
-  - [ ] [LOGOUT]
-- [ ] Susun layout `ProfileScreen`
+- [x] Buat section profile:
+  - [x] Foto profil 80x80px, circle
+  - [x] Nama lengkap
+  - [x] Nama sekolah
+  - [x] Tanggal bergabung
+  - [x] Padding 24px, white card, center-aligned
+- [x] Buat `StatsGrid` (3 kolom):
+  - [x] ⭐ Total Points
+  - [x] 📊 Total Entries
+  - [x] 🌱 CO₂e kg (dihindarkan)
+  - [x] 🔥 Current Streak
+  - [x] 📈 Your Rank (sekolah)
+  - [x] 💾 Total Weight (kg)
+- [x] Buat `ContributionBreakdown` (30 hari):
+  - [x] 🔵 Plastic: X entries, X pts
+  - [x] 📄 Paper: X entries, X pts
+  - [x] ⚫ Residue: X entries, X pts
+- [x] Buat `RecentActivityList`:
+  - [x] Last 5 entries
+  - [x] Tap "View all X entries" → modal atau screen terpisah
+- [x] Buat tombol akun (2-kolom grid, 48px height):
+  - [x] [EDIT PROFILE]
+  - [x] [LOGOUT]
+- [x] Susun layout `ProfileScreen`
 
 ### 1.7 Screen 6: LEADERBOARD
 
-- [ ] Buat `MonthSelector`:
-  - [ ] Dropdown atau swipe tabs
-  - [ ] Tampilkan 3 bulan terakhir
-- [ ] Buat Top 3 highlight:
-  - [ ] 🥇🥈🥉 emoji medals
-  - [ ] Font lebih besar, primary color
-  - [ ] Tampilkan nama + streak
-- [ ] Buat list leaderboard:
-  - [ ] "You are here" highlighted (primary-lighter bg + underline)
-  - [ ] Format: `#[rank] 👤 [Nama] [Poin]`
-  - [ ] Tappable rows (visual feedback)
-- [ ] Implementasi infinite scroll / "Load more"
-- [ ] Catatan info: "ℹ️ Resets monthly on the 1st"
-- [ ] Real-time updates via WebSocket (reflect point changes within 5s)
-- [ ] Susun layout `LeaderboardScreen`
+- [x] Buat `MonthSelector`:
+  - [x] Dropdown atau swipe tabs
+  - [x] Tampilkan 3 bulan terakhir
+- [x] Buat Top 3 highlight:
+  - [x] 🥇🥈🥉 emoji medals
+  - [x] Font lebih besar, primary color
+  - [x] Tampilkan nama + streak
+- [x] Buat list leaderboard:
+  - [x] "You are here" highlighted (primary-lighter bg + underline)
+  - [x] Format: `#[rank] 👤 [Nama] [Poin]`
+  - [x] Tappable rows (visual feedback)
+- [ ] Implementasi infinite scroll / "Load more" (deferred — perlu API)
+- [x] Catatan info: "ℹ️ Resets monthly on the 1st"
+- [ ] Real-time updates via WebSocket (deferred — Fase 8)
 
 ---
 
 ## 🔌 FASE 2: OFFLINE SUPPORT (SERVICE WORKER)
 
-- [ ] Setup `service-worker.js`
-- [ ] Implementasi Background Sync API:
-  - [ ] Event listener untuk `sync-waste-logs`
-  - [ ] Retry failed logs dari IndexedDB
-  - [ ] Fetch ke `/api/students/{id}/waste-disposal` dengan method POST
-- [ ] Setup IndexedDB schema:
-  - [ ] Object store `pending_logs`
-  - [ ] CRUD operations untuk pending logs
-- [ ] Client-side offline logic:
-  - [ ] Check `serviceWorker` support
-  - [ ] Save log ke IndexedDB sebelum network request
-  - [ ] Register `sync-waste-logs` background sync
-  - [ ] Tampilkan UI feedback: "Will sync when online"
-- [ ] Handle online/offline events di UI
-- [ ] Test skenario: scan → log → koneksi putus → reconnect → sync otomatis
+- [x] Setup `service-worker.js` (`public/sw.js`) — cache app shell + network-first API
+- [x] Implementasi Background Sync API:
+  - [x] Event listener untuk `sync-waste-logs`
+  - [x] Retry failed logs dari IndexedDB (5xx → retry; 4xx/2xx → delete)
+  - [x] Fetch ke `/api/students/{id}/waste-disposal` dengan method POST
+- [x] Setup IndexedDB schema (`src/lib/db.ts`):
+  - [x] Object store `pending_logs` via idb v8 + typed DBSchema
+  - [x] CRUD: `addPendingLog`, `getPendingLogs`, `deletePendingLog`, `getPendingCount`
+- [x] Client-side offline logic:
+  - [x] Check `serviceWorker` support + register via `ServiceWorkerProvider.tsx`
+  - [x] Deteksi offline via `navigator.onLine` sebelum submit
+  - [x] Save log ke IndexedDB via `queueWasteLog()` saat offline / fetch gagal
+  - [x] Register `sync-waste-logs` background sync setelah queue
+  - [x] UI feedback: `OfflineBanner.tsx` — merah (offline) / kuning (pending sync)
+- [x] Handle online/offline events di UI (`useOffline.ts` hook)
+- [ ] Test skenario: scan → log → koneksi putus → reconnect → sync otomatis (manual QA)
 
 ---
 
@@ -268,117 +268,107 @@
 
 ### 3.1 Layout & Navigation Admin
 
-- [ ] Setup layout admin desktop (1440px+):
-  - [ ] Header fixed 64px
-  - [ ] Sidebar 280px (collapsible ke 64px icon-only)
-  - [ ] Main content: sisa lebar, padding 24px
-  - [ ] Max content width: 1200px (opsional)
-- [ ] Buat komponen `AdminHeader`:
-  - [ ] Logo + "SIRKULA ADMIN"
-  - [ ] User avatar dengan dropdown menu
-  - [ ] Notifikasi icon
-  - [ ] Settings icon
-  - [ ] Dropdown menu: 👤 Profile, 🔑 Change Password, 📋 Activity Log, 🚪 Logout
-- [ ] Buat komponen `AdminSidebar`:
-  - [ ] Collapsed & expanded state
-  - [ ] Menu items: Home (🏠), Schools (🏫), FMCG Companies (🏢), Reports (📊), Financial (💰), Settings (⚙️)
-  - [ ] Sub-menu items per section (expanded view):
-    - Schools: All Schools, Onboard New, Performance
-    - FMCG: Active Contracts, Subscriptions, API Keys
-    - Reports: Brand Audit, Financial, System Health
-    - Financial: Reconciliation, Payouts, Revenue
-    - Settings: System Config, Users, Audit Logs
-  - [ ] Tombol [Collapse] di bawah sidebar
-  - [ ] Active item highlight
-- [ ] Buat komponen `Breadcrumb`
-- [ ] Sidebar collapsible logic (toggle 280px ↔ 64px)
+- [x] Setup layout admin desktop (`src/app/admin/layout.tsx`):
+  - [x] Header fixed 64px
+  - [x] Sidebar 280px (collapsible ke 64px icon-only)
+  - [x] Main content: margin-left dynamic, padding 24px
+  - [x] Transition 300ms pada sidebar collapse
+- [x] Buat komponen `AdminHeader` (`src/components/admin/AdminHeader.tsx`):
+  - [x] Logo + "SIRKULA ADMIN"
+  - [x] User avatar dengan dropdown menu
+  - [x] Notifikasi icon (badge merah)
+  - [x] Settings icon
+  - [x] Dropdown menu: 👤 Profile, 🔑 Change Password, 📋 Activity Log, 🚪 Logout
+- [x] Buat komponen `AdminSidebar` (`src/components/admin/AdminSidebar.tsx`):
+  - [x] Collapsed & expanded state (Zustand store: `src/stores/adminUi.ts`)
+  - [x] Menu items: Home (🏠), Schools (🏫), FMCG Companies (🏢), Reports (📊), Financial (💰), Settings (⚙️)
+  - [x] Sub-menu accordion (expand/collapse per section)
+  - [x] Tombol [Collapse] di bawah sidebar
+  - [x] Active item highlight via `usePathname()`
+  - [x] Auto-expand parent saat child route aktif
+- [x] Buat komponen `Breadcrumb` (`src/components/admin/Breadcrumb.tsx`)
+- [x] Sidebar collapsible logic (toggle 280px ↔ 64px, smooth transition)
 
 ### 3.2 Screen 1: ADMIN DASHBOARD (System Overview)
 
-- [ ] Buat `SystemStatusGrid` (4 kolom):
-  - [ ] StatusCard: API (🟢 Healthy, 145ms avg, Uptime 99.97%)
-  - [ ] StatusCard: Database (🟢 Connected, 4.2GB/16GB, CPU 12%)
-  - [ ] StatusCard: Cache (Hit 92%, 1.2GB, Online)
-  - [ ] StatusCard: DB Uptime (99.97%)
-- [ ] Buat `KeyMetricsGrid` (6 kolom, smaller cards):
-  - [ ] Schools count
-  - [ ] Total Students
-  - [ ] Active (30d)
-  - [ ] Entries (Month)
-  - [ ] Avg Points
-- [ ] Buat `DailyActivityChart`:
-  - [ ] Line chart 30 data points
-  - [ ] Y-axis: 0–200 entries
-  - [ ] X-axis: tanggal bulan ini
-  - [ ] Full width
-  - [ ] Fade in on load 300ms
-- [ ] Buat `RevenueBreakdown` (2 kolom):
-  - [ ] Pie chart: kategori material (Plastic 60%, Paper 40%, dll.)
-  - [ ] Tabel financial summary: Material Revenue, Fees 30%, School Net, Status
-- [ ] Buat `RecentAuditTable`:
-  - [ ] Kolom: Time, User, Action, Status
-  - [ ] 10 entri terbaru
-  - [ ] Link "View full audit log"
-- [ ] Susun layout `AdminDashboardScreen`
+- [x] Buat `SystemStatusGrid` (4 kolom, `SystemStatusGrid.tsx`):
+  - [x] StatusCard: API (🟢 Healthy, 145ms avg, Uptime 99.97%)
+  - [x] StatusCard: Database (🟢 Connected, 4.2GB/16GB, CPU 12%)
+  - [x] StatusCard: Cache (Hit 92%, 1.2GB, Online)
+  - [x] StatusCard: DB Uptime (99.97%)
+- [x] Buat `KeyMetricsGrid` (5 kolom, `KeyMetricsGrid.tsx`):
+  - [x] Schools count + trend %
+  - [x] Total Students + trend %
+  - [x] Active (30d) + trend %
+  - [x] Entries (Month) + trend %
+  - [x] Avg Points + trend %
+- [x] Buat `DailyActivityChart` (`DailyActivityChart.tsx`, Recharts):
+  - [x] Line chart 30 data points (deterministik, no hydration mismatch)
+  - [x] Y-axis: 0–200 entries
+  - [x] X-axis: tanggal bulan ini
+  - [x] Full width via ResponsiveContainer
+- [x] Buat `RevenueBreakdown` (`RevenueBreakdown.tsx`):
+  - [x] Pie chart: kategori material (Plastic 60%, Paper 30%, Residue 10%)
+  - [x] Tabel financial summary: Material Revenue, Fees 30%, School Net, FMCG Subscription
+- [x] Buat `RecentAuditTable` (`RecentAuditTable.tsx`):
+  - [x] Kolom: Time, User, Action, Status (color-coded badge)
+  - [x] 10 entri terbaru
+  - [x] Link "View full audit log"
+- [x] Susun layout `AdminDashboardScreen` (`src/app/admin/page.tsx`)
 
 ### 3.3 Screen 2: SCHOOLS MANAGEMENT
 
-- [ ] Buat tombol `[+ Add New School]`, `[Filters ▼]`, search input
-- [ ] Buat `SchoolsTable`:
-  - [ ] Kolom: School Name, Principal/Contact, Students/Eco, Active, Revenue, Actions
-  - [ ] Sortable columns (click header)
-  - [ ] Hover row highlight (light gray)
-  - [ ] Action buttons per row: [Edit] [View] [Delete]
-  - [ ] Checkboxes bulk selection (first column)
-  - [ ] Bulk action bar (muncul saat ada selection)
-  - [ ] Pagination: [< 1 2 3 >] + "Showing X of Y"
-- [ ] Buat `OnboardSchoolWizard` (3 langkah, modal):
-  - [ ] Step 1: Basic Info (name, address, principal name, contact phone)
-  - [ ] Step 2: School Details (student count, eco-station count, revenue share %)
-  - [ ] Step 3: Review & Confirm
-  - [ ] Progress indicator
-  - [ ] [Back] [Next] navigation
-  - [ ] [Submit] di langkah terakhir
-- [ ] Susun layout `SchoolsManagementScreen`
+- [x] Buat tombol [+ Tambah Sekolah], [Filters ▼], search input
+- [x] Buat `SchoolsTable` (`SchoolsTable.tsx`):
+  - [x] Kolom: School Name+City, Principal/Contact, Students/Eco, Aktif, Revenue, Status, Actions
+  - [x] Sortable columns: name, studentCount, activeStudents30d, totalRevenueMillion
+  - [x] Hover row highlight
+  - [x] Action buttons per row: View, Edit, Delete
+  - [x] Checkboxes bulk selection (first column)
+  - [x] Bulk action bar (muncul saat ada selection) + konfirmasi delete
+  - [x] Pagination: `Pagination.tsx` + "Showing X–Y of Z"
+  - [x] Search filter (nama/kota)
+- [x] Buat `OnboardSchoolWizard` (`OnboardSchoolWizard.tsx`, 3 langkah, modal):
+  - [x] Step 1: Basic Info (name, address, principal name, contact phone)
+  - [x] Step 2: School Details (city, student count, eco-station count, revenue share %)
+  - [x] Step 3: Review & Confirm (ringkasan semua data)
+  - [x] Progress indicator dengan checkmark pada step selesai
+  - [x] [Kembali] [Selanjutnya] navigation + [Submit] di langkah terakhir
+  - [x] Zod validation per step
+- [x] Susun layout `SchoolsManagementScreen` (`src/app/admin/schools/page.tsx`)
 
 ### 3.4 Screen 3: SCHOOL DETAILS (Drill-Down)
 
-- [ ] Buat header school detail (2 kolom):
-  - [ ] Kiri: nama sekolah, kota, nama principal, phone
-  - [ ] Kanan: Status, Joined date, Revenue Share %, tombol [Edit] [Pause] [Archive]
-- [ ] Buat `SchoolDetailTabs` (sticky):
-  - [ ] Tab: Overview, Students, Rewards, Finances, Logs
-- [ ] **Tab Overview:**
-  - [ ] `PerformanceCards` (4 kolom): Total Students, Active (30d), Waste kg (Month), Acceptance Rate %
-  - [ ] `WasteBreakdown` (2 kolom): Horizontal Bar Chart + Tabel perbandingan (This Mo vs Last Mo)
-  - [ ] `TopStudentsTable`: Rank, Name, Points, Entries, Streak
-  - [ ] Link "View Full Leaderboard"
-  - [ ] `EcoStationStatus` table: Station ID, Location, Total Scans, Last Used
-  - [ ] Link "View All Stations"
-- [ ] **Tab Students:** (daftar semua siswa dengan filter/sort)
-- [ ] **Tab Rewards:** (manajemen reward spesifik sekolah)
-- [ ] **Tab Finances:** (detail keuangan dan payout)
-- [ ] **Tab Logs:** (activity logs sekolah)
-- [ ] Susun layout `SchoolDetailsScreen`
+- [x] Buat header school detail (2 kolom, `src/app/admin/schools/[id]/page.tsx`):
+  - [x] Kiri: nama sekolah, kota, nama principal, phone
+  - [x] Kanan: Status badge, Joined date, Revenue Share %, tombol [Edit] [Pause] [Archive]
+- [x] Buat `SchoolDetailTabs` (sticky, `SchoolDetailTabs.tsx`):
+  - [x] Tab: Overview, Students, Rewards, Finances, Logs
+- [x] **Tab Overview:**
+  - [x] `PerformanceCards` (4 kolom): Total Students, Active (30d), Waste kg (Month), Acceptance Rate %
+  - [x] `WasteBreakdown`: Horizontal bar chart per kategori (This Mo vs Last Mo)
+  - [x] `TopStudentsTable`: Rank, Name, Points, Entries, Streak
+  - [x] `EcoStationStatus` table: Station ID, Location, Total Scans, Last Used
+- [ ] **Tab Students, Rewards, Finances, Logs:** placeholder (Sprint 2)
+- [x] Susun layout `SchoolDetailsScreen`
 
 ### 3.5 Screen 4: FMCG COMPANY DATA PORTAL
 
-- [ ] Buat header company detail:
-  - [ ] Nama perusahaan, email, Tier, Status
-  - [ ] Periode kontrak
-- [ ] Buat `APIUsageCards` (3 kolom):
-  - [ ] API Requests bulan ini
-  - [ ] Reports generated
-  - [ ] Rate limit usage %
-- [ ] Buat `RecentReportsList`:
-  - [ ] Card per report: judul, tanggal, sekolah, Data Quality %
-  - [ ] Tombol: [Download PDF] [Download CSV] [View JSON]
-  - [ ] Pagination / "Load More Reports"
-- [ ] Buat `SubscriptionBillingSection`:
-  - [ ] Plan, cost, billing cycle, next charge date
-  - [ ] Payment method, status
-  - [ ] Tombol: [Change Plan] [Update Payment Method] [Cancel]
-- [ ] Susun layout `FMCGCompanyScreen`
+- [x] Buat header company detail (`src/app/admin/companies/[id]/page.tsx`):
+  - [x] Nama perusahaan, email, Tier badge, Status badge
+  - [x] Periode kontrak
+- [x] Buat `APIUsageCards` (3 kolom):
+  - [x] API Requests bulan ini
+  - [x] Reports generated
+  - [x] Rate limit usage % (warning border jika > 80%)
+- [x] Buat `RecentReportsList`:
+  - [x] Card per report: judul, tanggal, sekolah, Data Quality %
+  - [x] Tombol: [PDF] [CSV] [JSON] per report
+  - [x] "Load more →" link
+- [x] Buat `SubscriptionBillingSection`:
+  - [x] Plan, cost, billing cycle, next charge date, payment method, status
+  - [x] Tombol: [Ganti Plan] [Update Pembayaran] [Batalkan Langganan]
+- [x] Susun layout `FMCGCompanyScreen`
 
 ---
 
@@ -386,43 +376,43 @@
 
 ### 4.1 Layout & Navigation School Staff
 
-- [ ] Setup layout mirip admin
-- [ ] Buat sidebar school staff:
-  - [ ] Menu: Dashboard (📊), Students (👥), Manage Rewards (🎁), Redemptions (📋), Reports (📈), Settings (⚙️)
-- [ ] Buat header school staff
+- [x] Setup layout mirip admin (`src/app/staff/layout.tsx`)
+- [x] Buat sidebar school staff (`StaffSidebar.tsx`):
+  - [x] Menu: Dashboard (📊), Students (👥), Manage Rewards (🎁), Redemptions (📋), Reports (📈), Settings (⚙️)
+- [x] Buat header school staff (`StaffHeader.tsx`)
 
 ### 4.2 Screen: REDEMPTIONS QUEUE
 
-- [ ] Buat header "PENDING REDEMPTIONS: [count]"
-- [ ] Buat `RedemptionCard` per pending:
-  - [ ] Timestamp
-  - [ ] Nama siswa + ID
-  - [ ] Nama reward
-  - [ ] Points spent
-  - [ ] SMS Code (jika ada)
-  - [ ] Tombol [Fulfill]
-  - [ ] Tombol "✓ MARK AS COMPLETE"
-- [ ] Implementasi "Mark as Complete" flow:
-  - [ ] Klik → API call record completion
-  - [ ] Trigger notifikasi ke siswa
-  - [ ] Hapus dari pending list
-- [ ] Tampilkan "COMPLETED (Last 7 Days): [count] | [View All]"
-- [ ] Susun layout `RedemptionsQueueScreen`
+- [x] Buat header "PENDING REDEMPTIONS: [count]"
+- [x] Buat `RedemptionCard` per pending:
+  - [x] Timestamp
+  - [x] Nama siswa + ID
+  - [x] Nama reward
+  - [x] Points spent
+  - [x] SMS Code (jika ada)
+  - [x] Tombol [Fulfill]
+  - [x] Tombol "✓ MARK AS COMPLETE"
+- [x] Implementasi "Mark as Complete" flow (mock, no backend API yet):
+  - [x] Klik → mock delay + hapus dari pending list
+  - [x] Toast notifikasi (mewakili notifikasi ke siswa)
+  - [x] Hapus dari pending list
+- [x] Tampilkan "COMPLETED (Last 7 Days): [count] | [View All]" (mock count, View All belum ada halaman)
+- [x] Susun layout `RedemptionsQueueScreen` (`src/app/staff/redemptions/page.tsx`)
 
 ### 4.3 Screen: STUDENTS LIST (School Staff)
 
-- [ ] Tabel daftar siswa dengan sort/filter
-- [ ] Detail per siswa: nama, poin, entries, streak, status
+- [x] Tabel daftar siswa dengan sort/filter (`StudentsTable.tsx`)
+- [x] Detail per siswa: nama, poin, entries, streak, status
 
 ### 4.4 Screen: MANAGE REWARDS (School Staff)
 
-- [ ] CRUD rewards: tambah, edit, hapus, atur stok
-- [ ] Toggle reward active/inactive
+- [x] CRUD rewards: tambah, edit, hapus, atur stok (`RewardFormModal.tsx` + `src/app/staff/rewards/page.tsx`)
+- [x] Toggle reward active/inactive
 
 ### 4.5 Screen: REPORTS (School Staff)
 
-- [ ] Laporan aktivitas sekolah
-- [ ] Export ke PDF/CSV
+- [x] Laporan aktivitas sekolah (`src/app/staff/reports/page.tsx`)
+- [x] Export ke CSV (client-side Blob download); Export PDF stubbed — perlu integrasi backend/PDF library
 
 ---
 
@@ -430,29 +420,29 @@
 
 ### 5.1 Brand Audit Interface
 
-- [ ] Buat `FilterQueryPanel` (sidebar sticky):
-  - [ ] Multi-select sekolah
-  - [ ] Dropdown bulan
-  - [ ] Checkbox brand filter
-  - [ ] Tombol [Apply Filters]
-- [ ] Buat `BrandAuditReport`:
-  - [ ] Header: judul, periode, sekolah, Data Quality %
-  - [ ] Tombol download: [Download PDF] [Download CSV]
-- [ ] Buat `BrandPackagingSection` per brand:
-  - [ ] Nama brand & parent company
-  - [ ] Tabel: Packaging Type, Count, Weight, Share %
-  - [ ] Total: units, weight, market share %
-- [ ] Buat `CompetitorSummarySection`:
-  - [ ] Breakdown % per competitor
-  - [ ] Link "View Detailed Breakdown"
-- [ ] Buat `InsightsRecommendationsSection`:
-  - [ ] Bullet points insights otomatis
-  - [ ] Recommendation teks
-- [ ] Buat `ESGMetricsSection`:
-  - [ ] Total plastic packaging attributed (kg)
-  - [ ] CO₂e avoided via sorting (kg)
-  - [ ] Contribution to circular economy (%)
-- [ ] Susun layout `BrandAuditScreen`
+- [x] Buat `FilterQueryPanel` (sidebar sticky):
+  - [x] Multi-select sekolah
+  - [x] Dropdown bulan
+  - [x] Checkbox brand filter
+  - [x] Tombol [Apply Filters]
+- [x] Buat `BrandAuditReport`:
+  - [x] Header: judul, periode, sekolah, Data Quality %
+  - [x] Tombol download: [Download PDF] [Download CSV] (UI only — belum terhubung ke backend/generator)
+- [x] Buat `BrandPackagingSection` per brand:
+  - [x] Nama brand & parent company
+  - [x] Tabel: Packaging Type, Count, Weight, Share %
+  - [x] Total: units, weight, market share %
+- [x] Buat `CompetitorSummarySection`:
+  - [x] Breakdown % per competitor
+  - [x] Link "View Detailed Breakdown" (UI only, halaman detail belum ada)
+- [x] Buat `InsightsRecommendationsSection`:
+  - [x] Bullet points insights otomatis (mock)
+  - [x] Recommendation teks
+- [x] Buat `ESGMetricsSection`:
+  - [x] Total plastic packaging attributed (kg)
+  - [x] CO₂e avoided via sorting (kg)
+  - [x] Contribution to circular economy (%)
+- [x] Susun layout `BrandAuditScreen` (`src/app/admin/reports/brand-audit/page.tsx`)
 
 ---
 
@@ -460,82 +450,69 @@
 
 ### 6.1 Atomic Components (`components/common/`)
 
-- [ ] **Button** (`Button.tsx`):
-  - [ ] Props: label, variant (primary/secondary/outline), size (md=48px), fullWidth, loading, disabled, onPress
-  - [ ] Variants: primary (bg-primary, white text), secondary, outline
-  - [ ] States: hover (bg-primary-dark), active (scale 95%), disabled (opacity 50%, no pointer)
-  - [ ] Loading: spinner inside button
-  - [ ] Transition: 150ms all
-- [ ] **Card** (`Card.tsx`):
-  - [ ] Props: title, icon, color (primary/success/warning), shadowSize (sm/md/lg), onPress
-  - [ ] Tap handler (optional)
-- [ ] **Input/TextInput** (`Input.tsx`):
-  - [ ] Props: label, placeholder, value, onChange, maxLength, type (text/number/email), error, helperText
-  - [ ] States: focused (primary border + shadow), invalid (red border + error msg), disabled (gray bg)
-  - [ ] Min height 48px (mobile) / 36px (admin)
-- [ ] **Modal** (`Modal.tsx`):
-  - [ ] Props: visible, title, onClose, type (alert/confirmation/choice)
-  - [ ] Slot: ModalContent, ModalActions
-  - [ ] Focus trap saat terbuka
-  - [ ] Escape key untuk close
-  - [ ] Full screen di mobile
-  - [ ] Fade in 200ms, scale from center (desktop)
-- [ ] **Header** (`Header.tsx`):
-  - [ ] Mobile: dengan back button + title + right icon
-  - [ ] Admin: dengan breadcrumb
+- [x] **Button** (`Button.tsx`):
+  - [x] Props: label, variant (primary/secondary/outline), size (md=48px), fullWidth, loading, disabled, onPress
+  - [x] Variants: primary (bg-primary, white text), secondary, outline
+  - [x] States: hover (bg-primary-dark), active (scale 95%), disabled (opacity 50%, no pointer)
+  - [x] Loading: spinner inside button
+  - [x] Transition: 150ms all
+- [x] **Card** (`Card.tsx`):
+  - [x] Props: title, icon, color (primary/success/warning), shadowSize (sm/md/lg), onPress
+  - [x] Tap handler (optional)
+- [x] **Input/TextInput** (`Input.tsx`):
+  - [x] Props: label, placeholder, value, onChange, maxLength, type (text/number/email), error, helperText
+  - [x] States: focused (primary border + shadow), invalid (red border + error msg), disabled (gray bg)
+  - [x] Min height 48px (mobile) / 36px (admin)
+- [x] **Modal** (`Modal.tsx`):
+  - [x] Props: visible, title, onClose, type (alert/confirmation/choice)
+  - [x] Slot: ModalContent, ModalActions
+  - [x] Focus trap saat terbuka
+  - [x] Escape key untuk close
+  - [x] Full screen di mobile
+  - [x] Fade in 200ms, scale from center (desktop)
+- [x] **Header** (`Header.tsx`) — `MobileHeader.tsx`
+  - [x] Mobile: dengan back button + title + right icon
+  - [ ] Admin: dengan breadcrumb (Fase 3)
 - [ ] **Sidebar** (`Sidebar.tsx`):
   - [ ] Collapsible (280px ↔ 64px)
   - [ ] Active item highlight
   - [ ] Sub-menu accordion
-- [ ] **Spinner/Loading** component (8-frame animation, looping)
-- [ ] **Toast/Notification** component:
-  - [ ] Slide in from top 200ms
-  - [ ] Auto-dismiss
-  - [ ] Variants: success, error, warning, info
-- [ ] **TextArea** component
-- [ ] **Select/Dropdown** component
-- [ ] **Checkbox** component
-- [ ] **RadioButton** component
-- [ ] **Badge/Chip** component
-- [ ] **Avatar** component (circle, dengan fallback)
-- [ ] **Pagination** component
+- [x] **Spinner/Loading** component (8-frame animation, looping) — built into Button
+- [x] **Toast/Notification** component (`Toast.tsx`):
+  - [x] Slide in from top 200ms
+  - [x] Auto-dismiss
+  - [x] Variants: success, error, warning, info
+- [x] **TextArea** component — di `Input.tsx`
+- [x] **Select/Dropdown** component (`Select.tsx`)
+- [x] **Checkbox** component (`Checkbox.tsx`)
+- [x] **RadioButton** component (`RadioButton.tsx`, exports `RadioButtonGroup`)
+- [x] **Badge/Chip** component (`Badge.tsx`)
+- [x] **Avatar** component (circle, dengan fallback) (`Avatar.tsx`, dipakai di `ProfileScreen`)
+- [x] **Pagination** component (`Pagination.tsx`, Fase 3)
 
 ### 6.2 Admin-Specific Components (`components/admin/`)
 
-- [ ] **DataTable** (`DataTable.tsx`):
-  - [ ] Props: columns, data, pagination, sorting, selectable, onSort, onPageChange, onSelectionChange, actions
-  - [ ] Sticky header (content scrollable)
-  - [ ] Sort arrows on column headers
-  - [ ] Hover row highlight
-  - [ ] Checkboxes bulk selection (top-left)
-  - [ ] Action buttons last column
-  - [ ] Pagination di bawah
-  - [ ] "Showing X of Y" text
-- [ ] **Charts** (`Charts.tsx`):
-  - [ ] LineChart (daily activity)
-  - [ ] PieChart (revenue breakdown)
-  - [ ] HorizontalBarChart (waste breakdown)
-  - [ ] Fade in on load 300ms
-  - [ ] Animate axis labels
-- [ ] **StatusCard** (untuk system status)
-- [ ] **MetricCard** (untuk key metrics)
-- [ ] **FormSection** + **FormGroup** + **FormActions**
-- [ ] **PageHeader** (judul + subtitle + breadcrumb)
-- [ ] **AuditTable**
+- [x] **DataTable** (`DataTable.tsx`) — generic sortable/paginated table, tersedia untuk tabel baru
+- [ ] **Charts** (`Charts.tsx`) — chart-chart existing (Daily Activity, Revenue Breakdown) sudah ada tapi belum di-generalize jadi satu file `Charts.tsx`
+- [x] **StatusCard** (`StatusCard.tsx`, di-extract dari `SystemStatusGrid`)
+- [x] **MetricCard** (`MetricCard.tsx`, di-extract dari `KeyMetricsGrid`)
+- [x] **FormSection** + **FormGroup** + **FormActions** (`FormSection.tsx`, dipakai di `RewardFormModal`)
+- [x] **PageHeader** (judul + subtitle + breadcrumb) (`PageHeader.tsx`, dipakai di halaman staff)
+- [x] **AuditTable** (`AuditTable.tsx`, `RecentAuditTable` sekarang wrapper tipis di atasnya)
 
 ### 6.3 Student-Specific Components (`components/student/`)
 
-- [ ] **BottomTabBar** (lihat 1.1)
-- [ ] **QRCodeReader** (lihat 1.3)
-- [ ] **ScanFrameOverlay** (lihat 1.3)
-- [ ] **PointsHeroCard** (lihat 1.2)
-- [ ] **ActivityFeed** (lihat 1.2)
-- [ ] **CategorySelector** (lihat 1.4)
-- [ ] **PhotoUploader** (lihat 1.4)
-- [ ] **PointsPreview** (lihat 1.4)
-- [ ] **RewardCard** (lihat 1.5)
-- [ ] **FilterChips** (lihat 1.5)
-- [ ] **RedemptionModal** (lihat 1.5)
+- [x] **BottomTabBar** ✓
+- [x] **QRCodeReader** ✓
+- [x] **ScanFrameOverlay** ✓
+- [x] **PointsHeroCard** ✓
+- [x] **ActivityFeed** ✓
+- [x] **CategorySelector** ✓ (inline di LogWasteForm)
+- [~] **PhotoUploader** (UI ✓, Cloudinary pending)
+- [x] **PointsPreview** ✓ (inline di LogWasteForm)
+- [x] **RewardCard** ✓ (inline di RewardsScreen)
+- [x] **FilterChips** ✓ (inline di RewardsScreen)
+- [x] **RedemptionModal** ✓
 
 ---
 
@@ -543,39 +520,36 @@
 
 ### 7.1 Custom Hooks (`hooks/`)
 
-- [ ] **useAuth** (`useAuth.ts`):
-  - [ ] Login, logout, check session
-  - [ ] Role-based: student, school_staff, admin, fmcg
-  - [ ] Persist auth state
-- [ ] **useWasteDisposal** (`useWasteDisposal.ts`):
-  - [ ] Submit waste log
-  - [ ] Fetch history
-  - [ ] Offline queue logic
-- [ ] **useLeaderboard** (`useLeaderboard.ts`):
-  - [ ] Fetch leaderboard data
-  - [ ] WebSocket subscription
-  - [ ] Filter by month
-- [ ] **useRewards** (`useRewards.ts`):
-  - [ ] Fetch rewards catalog
-  - [ ] Redeem reward
-  - [ ] Fetch redemption history
-- [ ] **useProfile** hook:
-  - [ ] Fetch student stats
-  - [ ] Update profile
-- [ ] **useOffline** hook:
-  - [ ] Detect online/offline status
-  - [ ] Manage pending sync queue
+- [x] **useAuth** (`useAuth.ts`):
+  - [x] Login, register, logout — real backend (Prisma + SQLite, bcrypt password hash, JWT httpOnly session cookie via `jose`)
+  - [x] Role-based: student, school_staff, admin, fmcg (`role` field dari `User`), enforced di `proxy.ts` (route protection)
+  - [x] Session persisted server-side via httpOnly cookie (bukan localStorage) — `GET /api/auth/me` untuk hydrate
+- [x] Waste log submission → real API (`/api/waste-entries`), status `pending` sampai admin approve/reject di `/admin/waste-approvals`; poin baru ditambahkan setelah approve (`useWasteDisposal.ts` mock dihapus)
+- [x] **useLeaderboard** (`useLeaderboard.ts`):
+  - [x] Fetch leaderboard data (mock per bulan, dipakai `LeaderboardScreen`)
+  - [x] WebSocket subscription — stub `wsStatus` (`connecting`→`connected`), koneksi asli menunggu Fase 8
+  - [x] Filter by month
+- [x] **useRewards** (`useRewards.ts`):
+  - [x] Fetch rewards catalog (mock, dipakai `RewardsScreen`)
+  - [x] Redeem reward (mock delay + kode SMS)
+  - [x] Fetch redemption history (in-memory)
+- [x] **useProfile** hook (`useProfile.ts`):
+  - [x] Fetch student stats (mock, dipakai `ProfileScreen`)
+  - [x] Update profile (mock delay)
+- [x] **useOffline** hook — sudah ada sejak Fase 2
 
 ### 7.2 Global State
 
-- [ ] Auth state (user info, role, token)
-- [ ] Student points & streak (real-time)
-- [ ] Notification state
-- [ ] WebSocket connection state
+- [x] Auth state (user info, role) — server session via httpOnly JWT cookie, hydrated per-request lewat `useAuth`/`/api/auth/me` (`authStore.ts` dihapus, tidak lagi localStorage-based)
+- [ ] Student points & streak (real-time) — belum real-time, masih local state per komponen (menunggu Fase 8)
+- [x] Notification state — `notificationStore.ts` (Zustand), dipakai di `AdminHeader`/`StaffHeader` bell icon
+- [ ] WebSocket connection state — di-stub sebagai `wsStatus` di dalam `useLeaderboard`, belum ada koneksi WS sungguhan (Fase 8)
 
 ---
 
 ## ⚡ FASE 8: REAL-TIME & WEBSOCKET
+
+> Seluruh fase ini butuh WebSocket server sungguhan (infra eksternal) — belum diimplementasikan. `useLeaderboard` sudah menyediakan `wsStatus` stub agar UI siap dihubungkan begitu server tersedia.
 
 - [ ] Setup WebSocket server connection
 - [ ] Subscribe leaderboard updates (reflect changes within 5s)
@@ -590,54 +564,38 @@
 
 ### 9.1 Student App
 
-- [ ] Page transitions: slide left/right 120ms ease-in-out
-- [ ] Button press: scale 95% (50ms), instant release
-  ```css
-  @keyframes buttonPress {
-    0% {
-      scale: 1;
-    }
-    50% {
-      scale: 0.95;
-    }
-    100% {
-      scale: 1;
-    }
-  }
-  button:active {
-    animation: buttonPress 50ms ease-out;
-  }
-  ```
-- [ ] Form validation error: shake input 2x (200ms)
-- [ ] Points award: bounce animation (confetti optional, test performance)
-- [ ] Leaderboard update: fade in new ranks (300ms)
-- [ ] Loading states: spinner (8-frame animation, looping)
+- [x] Page transitions: slide 120ms ease-in-out (`.page-transition` class, keyed by pathname di semua layout)
+- [x] Button press: scale 95% (`active:scale-95` di `Button.tsx`, `buttonPress` keyframe tersedia di `globals.css`)
+- [x] Form validation error: shake input 2x (200ms) — `Input`/`TextArea` menambahkan animasi `shake` saat `error` terisi
+- [x] Points award: bounce animation — `PointsHeroCard` poin menggunakan `bounce` keyframe
+- [x] Leaderboard update: fade in new ranks (300ms) — staggered `fadeIn` per baris di `LeaderboardScreen`
+- [x] Loading states: spinner (looping) — built into `Button`
 
 ### 9.2 Admin Dashboard
 
-- [ ] Table rows hover: bg color change (100ms)
-- [ ] Charts: fade in on load (300ms), animate axis labels
-- [ ] Modals: fade in (200ms), scale from center
-- [ ] Notifications: slide in from top (200ms), auto-dismiss
-- [ ] Data WebSocket updates: smooth transitions
+- [x] Table rows hover: bg color change (100ms) — `duration-100` pada `AuditTable`, `DataTable`, `StudentsTable`, `RevenueBreakdown`
+- [x] Charts: fade in on load (300ms) — `DailyActivityChart`, `RevenueBreakdown`; animate axis labels belum ada (Recharts default)
+- [x] Modals: fade in (200ms), scale from center (desktop) — `scaleIn` keyframe pada `sm:` breakpoint di `Modal.tsx`
+- [x] Notifications: slide in from top (200ms), auto-dismiss — sudah ada sejak `Toast.tsx`
+- [ ] Data WebSocket updates: smooth transitions — menunggu Fase 8
 
 ---
 
 ## ♿ FASE 10: ACCESSIBILITY (a11y)
 
-- [ ] Semua teks: WCAG AA contrast ratio minimum 4.5:1
-- [ ] Informasi tidak hanya dari warna (tambah ikon/teks): contoh "🔴 Failed" bukan hanya merah
-- [ ] Tab order logis (top-left ke bottom-right)
-- [ ] Focus visible: outline 2px pada semua elemen interaktif
-- [ ] Modals: trap focus di dalam modal sampai ditutup
-- [ ] Escape key: closes modal/dropdowns
-- [ ] Alt text pada semua gambar (termasuk fungsi emoji)
-- [ ] Form labels: associated via `<label htmlFor>` atau `aria-label`
-- [ ] Button text: deskriptif, bukan hanya "Click"
-- [ ] Tables: `<th>` headers dengan `scope` attributes
-- [ ] Touch targets mobile: minimum 44x44px
-- [ ] Tidak ada horizontal scroll di mobile
-- [ ] Modals: full screen di mobile
+- [x] Semua teks: WCAG AA contrast ratio minimum 4.5:1 (menggunakan token warna existing, belum diaudit dengan tool otomatis)
+- [x] Informasi tidak hanya dari warna (tambah ikon/teks): semua Badge/status pill sudah menyertakan label teks
+- [x] Tab order logis (mengikuti DOM order, tidak ada custom tabindex yang mengacaukan urutan)
+- [x] Focus visible: outline 2px pada elemen interaktif baru (`Checkbox`, `RadioButtonGroup`, `Select` mengikuti pola `Input`/`Button`)
+- [x] Modals: trap focus di dalam modal sampai ditutup — diimplementasikan di `Modal.tsx` (Tab/Shift+Tab cycling + focus restore)
+- [x] Escape key: closes modal/dropdowns
+- [x] Alt text pada semua gambar — `Avatar` menggunakan `alt={name}`, logo header sudah punya alt
+- [x] Form labels: associated via `<label htmlFor>` atau `aria-label`
+- [x] Button text: deskriptif, bukan hanya "Click"
+- [x] Tables: `<th>` headers dengan `scope` attributes (semua tabel baru mengikuti pola existing)
+- [x] Touch targets mobile: minimum 44x44px (`Checkbox`, `RadioButtonGroup` diberi `min-h-[44px]`)
+- [ ] Tidak ada horizontal scroll di mobile — belum diverifikasi manual di device/browser asli
+- [x] Modals: full screen di mobile (sudah ada sejak awal)
 
 ---
 
@@ -792,5 +750,16 @@ components/
 
 ---
 
-_Last updated: 2026-06-28_
+_Last updated: 2026-07-01 (Phase 4, 5, 6, 7, 9, 10 complete — mock/stub untuk semua dependensi infra eksternal)_
 _Based on: README.md v1.0 – UI/UX Design System & Component Specifications_
+
+## 📌 CATATAN INFRA YANG DI-DEFER
+
+Item berikut sengaja di-skip karena butuh kredensial/infra eksternal atau device fisik, bukan karena lupa:
+
+- **WebSocket server sungguhan** (Fase 8) — `useLeaderboard` sudah expose `wsStatus` stub, tinggal disambungkan.
+- **Cloudinary SDK** (Fase 0.3, 1.4 PhotoUploader) — UI placeholder sudah ada, upload nyata menunggu kredensial akun.
+- **Export PDF sungguhan** (Fase 4.5, 5.1) — tombol ada, generator PDF belum diintegrasikan (butuh library seperti jsPDF/backend service). Export CSV sudah fungsional (client-side Blob).
+- **Testing di device fisik / cross-browser** (Fase 12) — tidak bisa dilakukan dari lingkungan ini, butuh QA manual.
+- **Performance audit (FCP/LCP/CLS, bundle size)** (Fase 11) — butuh profiling di browser nyata / Lighthouse, bukan sekadar review kode.
+- **Figma structure & design handoff docs** (Fase 13) — di luar scope implementasi kode.

@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum UserRole {
+  student
+  school_staff
+  admin
+  fmcg
+}
+
+enum WasteCategory {
+  plastic
+  paper
+  residue
+}
+
+enum WasteEntryStatus {
+  pending
+  approved
+  rejected
+}
+
+model School {
+  id        String   @id @default(cuid())
+  name      String
+  city      String?
+  createdAt DateTime @default(now())
+
+  users       User[]
+  ecoStations EcoStation[]
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         UserRole @default(student)
+  schoolId     String?
+  school       School?  @relation(fields: [schoolId], references: [id])
+
+  points    Int      @default(0)
+  streak    Int      @default(0)
+  createdAt DateTime @default(now())
+
+  wasteEntries    WasteEntry[] @relation("StudentWasteEntries")
+  reviewedEntries WasteEntry[] @relation("ReviewerWasteEntries")
+}
+
+model EcoStation {
+  id        String   @id @default(cuid())
+  name      String
+  location  String?
+  schoolId  String
+  school    School   @relation(fields: [schoolId], references: [id])
+  qrCode    String   @unique
+  createdAt DateTime @default(now())
+
+  wasteEntries WasteEntry[]
+}
+
+model WasteEntry {
+  id          String            @id @default(cuid())
+  studentId   String
+  student     User              @relation("StudentWasteEntries", fields: [studentId], references: [id])
+  ecoStationId String?
+  ecoStation  EcoStation?       @relation(fields: [ecoStationId], references: [id])
+
+  productName String
+  category    WasteCategory
+  photoUrl    String?
+  notes       String?
+
+  status      WasteEntryStatus @default(pending)
+  pointsAwarded Int            @default(0)
+
+  reviewedById String?
+  reviewedBy   User?           @relation("ReviewerWasteEntries", fields: [reviewedById], references: [id])
+  reviewedAt   DateTime?
+  rejectionReason String?
+
+  createdAt DateTime @default(now())
+}
